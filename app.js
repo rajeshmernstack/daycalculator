@@ -7,6 +7,7 @@ var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var calculateRouter = require('./routes/calculate');
+var likesRouter = require('./routes/likes');
 
 var app = express();
 app.use(cors());
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/date', indexRouter);
 app.use('/calculate', calculateRouter);
+app.use('/likes', likesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
